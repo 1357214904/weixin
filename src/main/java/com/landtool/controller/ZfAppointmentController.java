@@ -298,7 +298,7 @@ class ZfAppointmentController {
      */
     @RequestMapping(value = {"/selectPollutionfree"},method =RequestMethod.GET )
     public List<ZfPollutionfree> selectPollutionfree(){
-       return zfAppointment.SelectPollutionfree();
+       return zfAppointment.SelectPollutionfree( );
     }
 
 
