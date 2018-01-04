@@ -47,7 +47,7 @@ class ZfAppointmentController {
      * @Author: lizhao
      * @Date: 2017-12-15 9:38
      * @param :null
-     * @Description:查询活动预约表
+     * @Description:查询活动预约表1
      *
      */
     @RequestMapping(value={"/selectAll"}, method= RequestMethod.GET)
