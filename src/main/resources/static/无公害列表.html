@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title></title>
+	</head>
+	
+	<script>
+		 window.onload = function(){ 
+　　			$.ajax({
+			    url:'http://1723120w5s.imwork.net:16460/ZfAppointment/selectPollutionfree',
+			    type:'get', //GET
+			    async:true,    //或false,是否异步
+			    
+			    timeout:5000,    //超时时间
+			    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+			    success:function(data,textStatus,jqXHR){
+			        console.log(data)
+			        for(var i=0;i<data.length;i++){
+			        	$(".table").append("<tr><td><a href=http://"+data[i].pollutionfreeLink+">"+data[i].pollutionfreeList+"</a></td></tr>")
+			        }	
+			    },
+			    error:function(xhr,textStatus){
+			        console.log('错误')
+			        console.log(xhr)
+			        console.log(textStatus)
+			    },
+			    complete:function(){
+			        console.log('结束')
+			    }
+			})
+　　
+} 
+			
+		
+		
+		
+	</script>
+	
+	<body>
+		<table class="table table-striped"  id="table" >
+  			<tr>
+    			<th>无公害产品公示</th>
+    			
+  			</tr>
+  			
+		</table>
+	</body>
+</html>

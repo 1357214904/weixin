@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>意见征集</title>
+
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+
+    <script type="text/javascript" src="JQ/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var t;
+        var count = 1;
+        var canshu1, canshu2;
+
+        function huifu(txt, answer) {
+            if (count == 1) {
+                $(txt).css({display: "block"});
+                $(answer).css({display: "block"});
+                count++;
+                canshu1 = txt;
+                canshu2 = answer;
+            }
+            else {
+                $(canshu1).css({display: "none"});
+                $(canshu2).css({display: "none"});
+                $(txt).css({display: "block"});
+                $(answer).css({display: "block"});
+                count++;
+                canshu1 = txt;
+                canshu2 = answer;
+            }
+
+        }
+
+        function answer(txt, answer) {
+            $(txt).css({display: "none"});
+            $(answer).css({display: "none"});
+        }
+        function fa() {
+            for (var i = 0; i <= 2; i++) {
+                var html = "<li>";
+                var sum = i + 1;
+                html = html + "<img" + " " + "class " + "=" + "\"touxiang\"" + "src" + "=" + "\" \"" + "/>";
+                html = html + "<span" + " " + "class" + "=" + "\"yonghuname\"" + ">" + "某某" + "</span>";
+                html = html + "</br>";
+                html = html + "<p " + " " + "class" + "=" + "\"yijianneirong\"" + ">" + "哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈" + "</p>";
+                html = html + "</br>";
+                html = html + "<p " + " " + "class" + "=" + "\"yijianneirong\"" + ">" + "&nbsp;&nbsp;" + "回复：" + "哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈" + "</p>";
+                html = html + "</br>";
+                html = html + "<i>" + "12:00" + "</i>";
+                if (i == 1) {
+                    $("#yijian").css({display: "block"});
+                    $("#neirong").css({display: "block"});
+                    html = html + "</li>";
+                    $("#yijianlist").append(html);
+                }
+                else {
+                    html = html + "<button" + " " + "class" + "=" + "\"huifu\"" + " " + "id" + "=" + "huifu" + sum + " " + "onclick" + "=" + "\"huifu(" + "text" + sum + "," + "answer" + sum + ")\"" + ">" + "回复" + "</button>" + "</li>" + "</br>";
+                    html = html + "<li>";
+                    html = html + "<textarea" + " " + "id" + "=" + "text" + sum + " " + "class" + "=" + "\"text\"" + "/>" + "</textarea>";
+                    html = html + "<button" + " " + "id" + "=" + "answer" + sum + " " + "class" + "=" + "\"answer\"" + " " + "onclick" + "=" + "\"answer(" + "text" + sum + "," + "answer" + sum + ")\"" + ">" + "发送" + "</button>";
+                    html = html + "</li>";
+                    $("#yijianlist").append(html);
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div id="biankuang">
+    <div id="bianju">
+        <div id="title">
+            <h3>意见征集</h3>
+        </div>
+        <div id="neirong">
+            <p></p>
+        </div>
+        <div id="yijian">
+            <textarea id="yjtxt"></textarea>
+            <!--<button onclick="f()">提交</button>-->
+        </div>
+        <button onclick="fa()">提交</button>
+        <div style="clear: both;"></div>
+        <div id="yijianjihe">
+            <ul id="yijianlist">
+
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+</body>
+
+</html>

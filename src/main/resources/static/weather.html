@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="bootstrap-table/dist/bootstrap-table.min.css">
+
+		<script type="text/javascript" src="JQ/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bootstrap-table/dist/bootstrap-table.min.js"></script>
+
+		<script>
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "http://1723120w5s.imwork.net:16460/ZfAppointment/shangchaundaolvyouqu",
+					dataType: "json",
+					async: true,
+					success: function(data) {
+						var yubaohuquyu = data.yubaoquyu;
+						$("#yubaoquyu").html(yubaohuquyu);
+						$("#date1").html(data.yubaoshijian[0]["预报时效"]);
+						$("#date2").html(data.yubaoshijian[1]["预报时效"]);
+						$("#date3").html(data.yubaoshijian[2]["预报时效"]);
+
+						$("#fengxiang1").html(data.yubaoshijian[0]["风向"]);
+						$("#fengxiang2").html(data.yubaoshijian[1]["风向"]);
+						$("#fengxiang3").html(data.yubaoshijian[2]["风向"]);
+
+						$("#fengli1").html(data.yubaoshijian[0]["风力（级）"]);
+						$("#fengli2").html(data.yubaoshijian[1]["风力（级）"]);
+						$("#fengli3").html(data.yubaoshijian[2]["风力（级）"]);
+
+						$("#shuiwen1").html(data.yubaoshijian[0]["表层水温（℃）"]);
+						$("#shuiwen2").html(data.yubaoshijian[1]["表层水温（℃）"]);
+						$("#shuiwen3").html(data.yubaoshijian[2]["表层水温（℃）"]);
+
+						$("#langgao1").html(data.yubaoshijian[0]["浪高（m）"]);
+						$("#langgao2").html(data.yubaoshijian[1]["浪高（m）"]);
+						$("#langgao3").html(data.yubaoshijian[2]["浪高（m）"]);
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="biankuang" style="background-color: #E9FBFE;">
+			<h5 style="margin-left: 10px; font-weight: 700;" id="yubaoquyu"></h5>
+			<div class="bianju">
+				<!--<table data-toggle="table" data-url="test.json">
+				<thead>
+					 <tr>
+						<th data-field="title" colspan="3">12日 8:00</th>
+					</tr> 
+					<tr>
+						<th data-field="title">日期</th>
+						<th data-field="name">风向</th>
+						<th data-field="jibie">级别</th>
+						<th data-field="ji">风向</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>-->
+				<table style="width: 100%; border-top: 3px solid #51DEE1; margin-top: 10px;">
+					<thead>
+						<tr>
+							<th class="date" colspan="4" id="date1" style="height: 30px;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="text-align: left;">
+							<td style="font-weight: 700;">风向 </td>
+							<td style="font-weight: 700;">风力（级）</td>
+							<td style="font-weight: 700;">浪高（m）</td>
+							<td style="font-weight: 700;">表层水温（℃）</td>
+						</tr>
+						<tr style="text-align: left;">
+							<td id="fengxiang1"></td>
+							<td id="fengli1"></td>
+							<td id="langgao1"></td>
+							<td id="shuiwen1"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="width: 100%; border-top: 3px solid #6FE2E6; margin-top: 10px;">
+					<thead>
+						<tr>
+							<th class="date" colspan="4" id="date2" style="height: 30px;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="text-align: left;">
+							<td style="font-weight: 700;">风向 </td>
+							<td style="font-weight: 700;">风力（级）</td>
+							<td style="font-weight: 700;">浪高（m）</td>
+							<td style="font-weight: 700;">表层水温（℃）</td>
+						</tr>
+						<tr style="text-align: left;">
+							<td id="fengxiang2"></td>
+							<td id="fengli2"></td>
+							<td id="langgao2"></td>
+							<td id="shuiwen2"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="width: 100%; border-top: 3px solid #AAEEF0; margin-top: 10px;">
+					<thead>
+						<tr>
+							<th class="date" colspan="4" id="date3" style="height: 30px;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="text-align: left;">
+							<td style="font-weight: 700;">风向 </td>
+							<td style="font-weight: 700;">风力（级）</td>
+							<td style="font-weight: 700;">浪高（m）</td>
+							<td style="font-weight: 700;">表层水温（℃）</td>
+						</tr>
+						<tr style="text-align: left;">
+							<td id="fengxiang3"></td>
+							<td id="fengli3"></td>
+							<td id="langgao3"></td>
+							<td id="shuiwen3"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>

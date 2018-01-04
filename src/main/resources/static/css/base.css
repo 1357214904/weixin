@@ -1,0 +1,114 @@
+
+/*公共样式*/
+textarea {
+	resize: none;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+.bianju {
+	margin: 0 20px;
+}
+
+.biankuang {
+	margin: 20px;
+	border: 1px solid gray;
+}
+/*预约页面样式*/
+.line {
+	border-bottom: 1px solid grey;
+}
+
+.required {
+	color: red;
+}
+
+#content {
+	height: 200px;
+}
+
+/*天气页面*/
+td {
+	height: 30px;
+	width: 25%;
+}
+
+/*留言*/
+#liuyanqu {
+	width: 100%;
+	height: 300px;
+	resize: none;
+}
+
+#liuyan {
+	background-color: #0088CC;
+	float: left;
+}
+
+
+/*意见*/
+#title {
+	border-bottom: 1px solid #003399;
+}
+
+/*文本域大小*/
+#yjtxt,
+.text {
+	width: 100%;
+	height: 150px;
+}
+
+button {
+	float: right;
+	border: none;
+	background-color: #D9F3F4;
+	outline-style: none;
+}
+
+#yijian,
+#neirong {
+	display: none;
+}
+
+/*头像样式*/
+.touxiang {
+	width: 30px;
+	height: 30px;
+	margin-top: 10px;
+	border: 1px solid #006DCC;
+	border-radius: 50%;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	margin-bottom: 30px;
+}
+
+/*隐藏回复按钮下的内容*/
+.text,
+.answer {
+	display: none;
+	margin-bottom: 5px;
+}
+
+.yonghuname {
+	color: yellowgreen;
+	margin-left: 30px;
+}
+
+.yijianneirong {
+	margin-left: 60px;
+	display: inline-block;
+}
+
+i {
+	margin-left: 60px;
+	color: darkgray;
+	font-size: 12px;
+}
